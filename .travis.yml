@@ -22,7 +22,7 @@ before_deploy:
   - mv freelec-springboot2-webservice.zip deploy/freelec-springboot2-webservice.zip
 
 deploy:
-- provider: s3
+  provider: s3
   access_key_id: $AWS_ACCESS_KEY # Travis  repo settings에 설정 된 값
   secret_access_key: $AWS_SECRET_KEY #Travis repo settings 에 설정 된 값
   bucket: spring-build # S3버킷 이름
@@ -32,7 +32,7 @@ deploy:
   local_dir: deploy #before_deploy에서 생성된 디렉토리
   wait-until-deployed: true
 
- - provider: codedeploy
+   provider: codedeploy
    access_key_id: $AWS_ACCESS_KEY #Travis repo settings에 설정 된 값
    secret_access_key: $AWS_SECRET_KEY #Travis repo settings 에 설정 된 값
    bucket: spring-build # S3버킷 이름
